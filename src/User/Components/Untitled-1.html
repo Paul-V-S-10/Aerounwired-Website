@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors</title>
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f9fa; 
+    color: #2d2c5c; 
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 2848px;
+    height:fit-content;
+    margin: 0;
+    background: #f6f6f6;
+    background-image: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9) 25%, transparent 25%), 
+    linear-gradient(225deg, rgba(255, 255, 255, 0.9) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(200, 220, 255, 0.2) 25%, transparent 25%),
+    linear-gradient(135deg, transparent 75%, rgba(200, 220, 255, 0.2) 75%);
+    background-size: 100px 100px, 100px 100px, 100px 100px;
+    background-position: 0 0, 0 0, 0 0;
+    background-blend-mode: multiply, screen, normal;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #070625; 
+}
+
+.main-section {
+    background: #ffffff;
+    margin:auto; 
+    height: 576px;
+    width: 66%;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 2px solid #d3d3d3; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+.slide {
+            height:auto;
+  	        width:auto;  
+            position: absolute;
+            opacity: 0;
+            transition: all 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .slide.center {
+            opacity: 1;
+            max-width: 1000px;
+            max-height: 579px;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide.left, .slide.right {
+            opacity: 0.9;
+            max-width: 1000px;
+            max-height: 579px;
+            filter: blur(5px);
+            z-index: 2;
+        }
+        .slide.extremeleft, .slide.extremeright{
+            opacity: 0.5;
+            max-width: 1000px;
+            max-height: 579px;
+            filter: blur(5px);
+            z-index: 1;
+        }
+        .slide.hidden{
+            opacity: 0;
+            max-width: 1000px;
+            max-height: 579px;
+            filter: blur(5px);
+            z-index: 1;
+        }
+        .slide.left {
+            transform: translateX(-300px) scale(0.8);
+        }
+
+        .slide.right {
+            transform: translateX(300px) scale(0.8);
+        }
+        .slide.extremeright, .slide.hidden{
+            transform: translateX(500px) scale(0.5);
+        }
+        .slide.extremeleft{
+            transform: translateX(-500px) scale(0.5);
+        }
+
+        .slideshow:hover .slide {
+            animation-play-state: paused;
+        }
+
+.slide.active {
+  opacity: 1;
+}
+.prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #4a90e2; /* Blue background */
+      padding: 15px 20px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .prev:hover, .next:hover {
+      transform: translateY(-50%) scale(1.1);
+      background: #357ABD; /* Darker blue on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+    .prev:focus, .next:focus {
+      outline: 3px solid #FFD700;
+      outline-offset: 2px;
+    }
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.sponsors {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.sponsor-button {
+    text-align: center;
+    margin: 20px;
+    padding: 15px;
+    background-color: #f7f7f7cf; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 100px;
+    border: 1px solid #ddd; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; 
+    font-size: 14px;
+    font-weight: bold;
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sponsor-button img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.sponsor-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff; 
+    color: #2d2c5c; 
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">OUR SPONSORS</h1>
+        <div class="main-section" id="mainsection">
+          <div class="slide center">
+            <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\pictures\Glorod slide.jpg" alt="Glorod avionics">
+        </div>
+        <div class="slide left">
+            <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\pictures\Quadkart slide.jpg" alt="Quad Kart">
+        </div>
+        <div class="slide extremeleft">
+            <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\pictures\Ansys slide.jpg" alt="Ansys">
+        </div>
+        <div class="slide right">
+            <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\pictures\Dark matter slide.jpg" alt="Dark Matter">
+        </div>
+        <div class="slide extremeright">
+            <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\pictures\Dassault Systemes slide.jpg" alt="Dassault Systemes">
+        </div>
+        <div class="slide extremeright">
+            <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\pictures\RS slide.jpg" alt="RS group">
+        </div>
+              <button class="prev" id="prev" aria-label="Previous Slide">&lt;</button>
+              <button class="next" id="next" aria-label="Next Slide">&gt;</button>    
+        </div>
+        <div class="sponsors">
+            <a href="https://glorodavionics.com/home.html" class="sponsor-button" target="_blank">
+                <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\Glorod avionics logo.png" alt="GLOROD AVIONICS">
+                GLOROD AVIONICS
+            </a>
+            <a href="https://www.quadkart.com" class="sponsor-button" target="_blank">
+                <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\Quadkart logo.png" alt="QUAD KART">
+                QUAD KART
+            </a>
+            <a href="https://www.ansys.com/" class="sponsor-button" target="_blank">
+                <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\Ansys.png" alt="ANSYS">
+                ANSYS
+            </a>
+            <a href="https://dmatter.com" class="sponsor-button" target="_blank">
+                <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\darkmatter.png" alt="DARK MATTER">
+                DARK MATTER
+            </a>
+            <a href="https://www.3ds.com" class="sponsor-button" target="_blank">
+                <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\Dassault Systems.png" alt="DASSAULT SYSTEMES">
+                DASSAULT SYSTEMES
+            </a>
+            <a href="https://www.rsgroup.com" class="sponsor-button" target="_blank">
+                <img src="C:\Users\Aaditya\OneDrive\Documents\Airfoils\RS group.png" alt="RS GROUP">
+                RS GROUP
+            </a>
+        </div>
+    </div>
+    
+  <script>
+    const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('center', 'left', 'right','extremeleft','extremeright','hidden');
+                if (index === currentIndex) {
+                    slide.classList.add('center');
+                } else if (index === (currentIndex + 1) % slides.length) {
+                    slide.classList.add('right');
+                } else if (index === (currentIndex - 1 + slides.length) % slides.length) {
+                    slide.classList.add('left');
+                } else if (index === (currentIndex - 2 + slides.length) % slides.length) {
+                    slide.classList.add('extremeleft');
+                }else if (index === (currentIndex +2) % slides.length){
+                    slide.classList.add('extremeright');
+                }else{
+                    slide.classList.add('hidden');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlides();
+        }
+        function prevSlide(){
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          updateSlides();
+        }
+        updateSlides();
+        let slideshowInterval = setInterval(nextSlide, 3000);
+        const slideshow = document.getElementById('mainsection');
+        const nextButton = document.getElementById('next');
+        const prevButton = document.getElementById('prev');
+        slideshow.addEventListener('mouseenter', () => clearInterval(slideshowInterval));
+        slideshow.addEventListener('mouseleave', () => slideshowInterval = setInterval(nextSlide, 3000));
+    nextButton.addEventListener('click', () => {
+      nextSlide();
+    });
+    prevButton.addEventListener('click', () => {
+      prevSlide();
+    });
+    </script>
+</body>
+</html>
