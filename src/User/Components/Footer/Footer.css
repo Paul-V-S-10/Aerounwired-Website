@@ -78,6 +78,8 @@ html, body
     top: 70px;
     left: 70px;
     height: 250px;
+    width: auto;
+    padding: 10px;
 }
 
 
@@ -90,7 +92,7 @@ html, body
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust to actually center */
     font-weight: 500;
-    font-family: "Montserrat Underline", sans-serif;
+    font-family: "Montserrat", sans-serif;
     transition: transform 0.3s ease, letter-spacing 0.3s ease, opacity 0.3s ease;
     text-align: center; /* Center text */
 }
@@ -135,7 +137,6 @@ html, body
 .heading:hover
 {
     color: yellowgreen;
-    
 }
 
 .para

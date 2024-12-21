@@ -1,0 +1,60 @@
+.gallery-container {
+    text-align: center;
+    background-color: #120f0f;
+    padding: 10px;
+  }
+
+.gallery 
+{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    background-color: #120f0f;
+    overflow: hidden;
+    padding: 10x;
+    position: relative;
+  }
+  
+
+.heading1
+{
+    color: yellowgreen;
+    font-family: "Sigmar One", serif;
+    font-size: 80px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.gallery-item
+{
+    flex: 2;
+    overflow: hidden;
+    transition: flex 0.4s ease;
+    position: relative;
+    height: 550px;
+    border-radius: 20px;
+    width: 500px
+}
+  
+.gallery-item img 
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: filter 0.3s ease;
+}
+  
+  
+.gallery-item:hover 
+{
+    flex: 10; 
+}
+  
+.gallery-item:hover img 
+{
+    filter: brightness(1); 
+}
+  
