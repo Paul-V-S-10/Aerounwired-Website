@@ -9,9 +9,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(10, 20, 50, 0.8);
+    background-color: rgb(10, 20, 50);
     padding: 20px 80px;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     z-index: 10;
     width: 100%;
